@@ -1,24 +1,14 @@
-import React from 'react';
-import { useState } from "react";
-import { useZxing } from "react-zxing";
+import React from 'react'
+import Header from './components/header/header';
 
-export const BarcodeScanner = () => {
-  const [result, setResult] = useState("");
-  const { ref } = useZxing({
-    onDecodeResult(result) {
-      setResult(result.getText());
-    },
-  });
 
+
+function App() {
   return (
-    <>
-      <video ref={ref} />
-      <p>
-        <span>Last result:</span>
-        <span>{result}</span>
-      </p>
-    </>
+    <div>
+      <Header/>
+    </div>
   );
-};
+}
 
-export default BarcodeScanner;
+export default App;
